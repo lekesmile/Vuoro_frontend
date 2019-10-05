@@ -1,0 +1,46 @@
+/* Home Route Css eli login page */
+
+.homeh1 {
+  font-family: "Love Ya Like A Sister", cursive;
+}
+
+.homep {
+  font-family: "Lobster Two", cursive;
+}
+
+.homespan {
+  color: black;
+}
+
+.homelogin {
+  color: #01bf86;
+  font-family: "Bitter", serif;
+}
+.mt-8 {
+  margin-top: 120px;
+}
+
+.lg-jumb {
+  width: 30%;
+  background-color: white !important;
+  border: 1px solid;
+}
+.lg-jumb2 {
+  width: 60%;
+  background-color: #01bf86 !important;
+  color: white;
+  border: 1px solid;
+}
+
+.btn-primary {
+  background-color: #01bf86 !important;
+  padding: 10px 40% !important;
+}
+
+.loginSignup{
+  font-size: 12px;
+  margin-top: 20px;
+  text-decoration: underline;
+   color: #01bf86;
+  
+}
