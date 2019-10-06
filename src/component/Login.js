@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
 
 class Login extends Component {
     state = {
@@ -18,6 +19,20 @@ class Login extends Component {
     submitHandler = (e) => {
         e.preventDefault()
         console.log(this.state)
+        const newUser = {
+            
+            email: this.state.email,
+            password: this.state.password
+       
+        }
+    
+        axios.post("http://localhost:5000/login", newUser)
+            .then(res => console.log(res.data))
+            .catch(err => console.log(err.response.data));
+    
+        
+    
+        
     }
 
     render() {
@@ -36,7 +51,7 @@ class Login extends Component {
                     </p>
                 </div>
                 <div className="jumbotron lg-jumb">
-                    <form>
+                        <form onSubmit={this.submitHandler} >
                         <h1 className="mb-3"><span className="homelogin">Login</span></h1>
                         <div className="form-group">
                             <label htmlFor="exampleInputEmail1">Email address</label>
@@ -47,7 +62,7 @@ class Login extends Component {
                             <label htmlFor="exampleInputPassword1">Password</label>
                             <input name="password" onChange={this.formInPutHandler} type="password" className="form-control" id="exampleInputPassword1" placeholder="Password" />
                         </div>
-                        <button onClick={this.submitHandler} type="submit" className="btn btn-primary ">Submit</button>
+                        <button type="submit" className="btn btn-primary ">Submit</button>
 
                             <Link className="nav-link loginSignup" to="/signup"> Sign Up</Link>
                     </form>

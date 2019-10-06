@@ -18,14 +18,14 @@ const App = ()=> {
      
       <Switch>
         <Route exact path="/" component={Login} />
-        <div>
+        <React.Fragment>
         <Header />
         <Route exact path="/livedemo" component={Livedemo} />
         <Route exact path="/partner" component={Partner} />
         <Route exact path="/product" component={Product} />
         <Route exact path="/pricing" component={Pricing} />
         <Route exact path="/signup" component={Signup} />
-        </div>
+        </React.Fragment>
         <Route component={NotFound} />
       </Switch> 
 
