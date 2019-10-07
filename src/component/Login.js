@@ -64,7 +64,7 @@ class Login extends Component {
                         </div>
                         <button type="submit" className="btn btn-primary ">Submit</button>
 
-                            <Link className="nav-link loginSignup" to="/signup"> Sign Up</Link>
+                            <Link className="nav-link loginSignup" to="/signup"> <span className="removehref">Not registered ? </span> Sign Up</Link>
                     </form>
                 </div>
                 </div>

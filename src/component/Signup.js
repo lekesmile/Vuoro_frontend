@@ -30,6 +30,7 @@ class Signup extends Component {
         }
         axios.post("http://localhost:5000/signup", newUser)
             .then(response => {
+                // return <Redirect to={"/product"} />
                 console.log('user added' + response.data)
 
             })
