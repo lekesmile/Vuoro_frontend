@@ -20,7 +20,7 @@ class Signup extends Component {
 
     submitHandler = (e) => {
         e.preventDefault()
-        console.log(this.state)
+
         const newUser = {
             firstname: this.state.firstname,
             lastname: this.state.lastname,
@@ -30,8 +30,8 @@ class Signup extends Component {
         }
         axios.post("http://localhost:5000/signup", newUser)
             .then(response => {
-                // return <Redirect to={"/product"} />
-                console.log('user added' + response.data)
+                // return <Redirect to login
+                this.props.history.push("/");
 
             })
             .catch(err => console.log(err.response.data));
