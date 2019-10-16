@@ -20,11 +20,11 @@ class Partner extends Component {
             .catch(error => console.log(`Error fetch API ${error}`))
     }
 
-    // handleEdit
+    // handle Edit
     handleEdit= ()=>{
      alert('Edit')
     }
-
+    // handle Delete 
     handleDelete = () => {
         alert('Delete')
     }
