@@ -16,7 +16,7 @@ class Login extends Component {
         })
     }
 
-    submitHandler = async (e) => {
+    submitHandler =  (e) => {
         e.preventDefault()
         console.log(this.state)
 
@@ -24,14 +24,18 @@ class Login extends Component {
             email: this.state.email,
             password: this.state.password
         }
-   try {
-      await axios.post("http://localhost:5000/login", newUser)
+  
+      axios.post("http://localhost:5000/login", newUser)
+          .then(response => {
         
                 // return <Redirect to product route
                 this.props.history.push("/product"); 
-   } catch (error) {
-       console.log(e.message)
-   }
+          })
+          .catch ((err)=>{
+               console.log(err.message)
+          })
+      
+   
        
 
          
