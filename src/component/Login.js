@@ -10,7 +10,6 @@ class Login extends Component {
 
 
     formInPutHandler = (e) => {
-        console.log(this.state)
         this.setState({
             [e.target.name]: e.target.value
         })
@@ -27,9 +26,10 @@ class Login extends Component {
   
       axios.post("http://localhost:5000/login", newUser)
           .then(response => {
-        
+               localStorage.setItem('usertoken', response.data)
                 // return <Redirect to product route
                 this.props.history.push("/product"); 
+                return response.data
           })
           .catch ((err)=>{
                console.log(err.message)

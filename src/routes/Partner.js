@@ -21,11 +21,12 @@ class Partner extends Component {
     }
 
     // handle Edit
-    handleEdit= ()=>{
-     alert('Edit')
+    handleEdit= (e)=>{
+        const id = e.target.value
+     alert(id)
     }
     // handle Delete 
-    handleDelete = () => {
+    handleDelete = (e) => {
         alert('Delete')
     }
 
@@ -52,7 +53,7 @@ class Partner extends Component {
                     <tbody>
                         {getWorkers.map(worker => (
                         <tr key={worker._id}>
-                                <th  scope="row"></th>
+                                <th scope="row">{worker._id}</th>
                                 <td>{worker.firstname}</td>
                                 <td>{worker.lastname}</td>
                                 <td>{worker.email}</td>
