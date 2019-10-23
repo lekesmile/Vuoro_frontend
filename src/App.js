@@ -9,6 +9,10 @@ import Signup from './component/Signup'
 import Product from './routes/Product'
 import Pricing from './routes/Pricing'
 import NotFound from './routes/NotFound'
+import Delete from './component/Delete'
+import Edit from './component/Edit'
+
+
 
 const App = ()=> {
   return (
@@ -25,6 +29,8 @@ const App = ()=> {
         <Route exact path="/partner" component={Partner} />
         <Route exact path="/product" component={Product} />
         <Route exact path="/pricing" component={Pricing} />
+        <Route path="/delete/:id" component={Delete} />
+        <Route path="/edit/:id" component={Edit} />
         
         </React.Fragment>
         <Route component={NotFound} />
