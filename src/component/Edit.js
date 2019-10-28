@@ -99,6 +99,7 @@ export default class Edit extends Component {
                                 <td>
                                     <button className="btn btn-outline-info mx-1">Save</button>
                                     <button onClick={this.deleteHandler}className="btn btn-outline-danger ">Delete</button>
+                                   
                                 </td>
                             </tr>
 

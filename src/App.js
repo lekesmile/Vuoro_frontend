@@ -11,6 +11,8 @@ import Pricing from './routes/Pricing'
 import NotFound from './routes/NotFound'
 import Delete from './component/Delete'
 import Edit from './component/Edit'
+import Profile from './component/Profile'
+
 
 
 
@@ -26,6 +28,7 @@ const App = ()=> {
         <React.Fragment>
         <Header />
         <Route exact path="/livedemo" component={Livedemo} />
+        <Route exact path="/profile" component={Profile} />
         <Route exact path="/partner" component={Partner} />
         <Route exact path="/product" component={Product} />
         <Route exact path="/pricing" component={Pricing} />

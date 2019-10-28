@@ -26,9 +26,10 @@ class Login extends Component {
   
       axios.post("http://localhost:5000/login", newUser)
           .then(response => {
-               localStorage.setItem('usertoken', response.data)
+              sessionStorage.setItem('userData', JSON.stringify(response.data))
+              localStorage.setItem('usertoken', JSON.stringify(response.data))
                 // return <Redirect to product route
-                this.props.history.push("/product"); 
+                this.props.history.push("/partner"); 
                 return response.data
           })
           .catch ((err)=>{
@@ -72,7 +73,7 @@ class Login extends Component {
                                 <label htmlFor="exampleInputPassword1">Password</label>
                                 <input name="password" onChange={this.formInPutHandler} type="password" className="form-control" id="exampleInputPassword1" placeholder="Password" />
                             </div>
-                            <button type="submit" className="btn btn-primary ">Submit</button>
+                            <button type="submit" className="btn btn-primaryHome ">Submit</button>
 
                             <Link className="nav-link loginSignup" to="/signup"> <span style={{ textDecorationLine: 'none' }}>  Not registered ?</span> Sign Up</Link>
                         </form>

@@ -1,13 +1,16 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
+import Modal from '../component/Modal';
+
 
 
 
 class Partner extends Component {
     state = {
         getWorkers: [],
-        loaded: false
+        loaded: false,
+
     }
 
 
@@ -36,7 +39,7 @@ class Partner extends Component {
                 if (this.loaded) {
                     this.setState({
                         getWorkers: res.data,
-
+                       
                     })
                 }
             })
@@ -52,13 +55,21 @@ class Partner extends Component {
 
 
     render() {
+
+    // Destruction
         let { getWorkers, loaded } = this.state
+
+     // Display loading data is problem accessing the api
         if (!loaded) {
             return <div>loading data ....</div>
         }
+
+       
+
+
         return (
             <div>
-
+               <Modal />
                 <table className="table table-hover mt-5">
                     <thead>
                         <tr>
