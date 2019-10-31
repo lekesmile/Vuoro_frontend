@@ -15,35 +15,25 @@ class Login extends Component {
         })
     }
 
-    submitHandler =  (e) => {
+    submitHandler = (e) => {
         e.preventDefault()
-        console.log(this.state)
+        console.log(this.state.email)
 
         const newUser = {
             email: this.state.email,
             password: this.state.password
         }
-  
-      axios.post("http://localhost:5000/login", newUser)
-          .then(response => {
-              sessionStorage.setItem('userData', JSON.stringify(response.data))
-              localStorage.setItem('usertoken', JSON.stringify(response.data))
+
+        axios.post("http://localhost:5000/login", newUser)
+            .then(response => {
+                localStorage.setItem('usertoken', JSON.stringify(response.data))
                 // return <Redirect to product route
-                this.props.history.push("/partner"); 
+                this.props.history.push("/partner");
                 return response.data
-          })
-          .catch ((err)=>{
-               console.log(err.message)
-          })
-      
-   
-       
-
-         
-           
-
-
-
+            })
+            .catch((err) => {
+                console.log(err.message)
+            })
 
     }
 
@@ -67,20 +57,30 @@ class Login extends Component {
                             <h1 className="mb-3"><span className="homelogin">Login</span></h1>
                             <div className="form-group">
                                 <label htmlFor="exampleInputEmail1">Email address</label>
-                                <input name="email" onChange={this.formInPutHandler} type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
+                                <input name="email"
+                                    onChange={this.formInPutHandler}
+                                    type="email" className="form-control"
+                                    id="exampleInputEmail1"
+                                    aria-describedby="emailHelp"
+                                    placeholder="Enter email" 
+                                    />
                             </div>
                             <div className="form-group">
                                 <label htmlFor="exampleInputPassword1">Password</label>
-                                <input name="password" onChange={this.formInPutHandler} type="password" className="form-control" id="exampleInputPassword1" placeholder="Password" />
+                                <input name="password"
+                                    onChange={this.formInPutHandler}
+                                    type="password"
+                                    className="form-control"
+                                    id="exampleInputPassword1"
+                                    placeholder="Password"
+                                     />
                             </div>
                             <button type="submit" className="btn btn-primaryHome ">Submit</button>
-
                             <Link className="nav-link loginSignup" to="/signup"> <span style={{ textDecorationLine: 'none' }}>  Not registered ?</span> Sign Up</Link>
                         </form>
                     </div>
                 </div>
             </div>
-
         )
     }
 }

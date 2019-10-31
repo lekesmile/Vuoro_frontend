@@ -30,6 +30,7 @@ export default class Delete extends Component {
 
     deleteHandler = (e) => {
         e.preventDefault();
+        
         axios.delete("http://localhost:5000/api/workers/" + this.props.match.params.id)
             .then(console.log('Deleted'))
             .catch(err => console.log(err))

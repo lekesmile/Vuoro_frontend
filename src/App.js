@@ -12,6 +12,7 @@ import NotFound from './routes/NotFound'
 import Delete from './component/Delete'
 import Edit from './component/Edit'
 import Profile from './component/Profile'
+import withAuth from './hocs/withAuth'
 
 
 

@@ -19,6 +19,7 @@ class Partner extends Component {
     //Fetch the worker from database
 
     componentDidMount() {
+
         fetch('http://localhost:5000/api/workers/')
             .then(res => res.json())
             .then(result => {
@@ -34,12 +35,12 @@ class Partner extends Component {
     // Update the page after it has been updated
 
     componentDidUpdate() {
+
         axios.get('http://localhost:5000/api/workers')
             .then(res => {
                 if (this.loaded) {
                     this.setState({
                         getWorkers: res.data,
-                       
                     })
                 }
             })

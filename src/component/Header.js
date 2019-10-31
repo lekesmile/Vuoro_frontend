@@ -13,10 +13,9 @@ export default class Header extends Component {
     }
 
     logout = () => {
-        sessionStorage.setItem("userData", '');
+       
         localStorage.setItem('usertoken', '');
         localStorage.clear();
-        sessionStorage.clear();
         this.setState({ redirectToReferrer: true });
     }
 
