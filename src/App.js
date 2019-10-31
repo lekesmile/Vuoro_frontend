@@ -28,14 +28,15 @@ const App = ()=> {
         <Route exact path="/signup" component={Signup} />
         <React.Fragment>
         <Header />
+         
         <Route exact path="/livedemo" component={Livedemo} />
         <Route exact path="/profile" component={Profile} />
-        <Route exact path="/partner" component={Partner} />
+        <Route exact path="/partner" component={Partner } />
         <Route exact path="/product" component={Product} />
         <Route exact path="/pricing" component={Pricing} />
         <Route path="/delete/:id" component={Delete} />
         <Route path="/edit/:id" component={Edit} />
-        
+          
         </React.Fragment>
         <Route component={NotFound} />
       </Switch> 

@@ -25,6 +25,7 @@ export default class Modal extends Component {
 
     onSubmit = (e) => {
         e.preventDefault();
+        // let header = { Authorization: 'x-auth-token ' + JSON.parse(localStorage.getItem('token'))};
 
         const obj = {
             firstname: this.state.firstname,
@@ -48,6 +49,9 @@ export default class Modal extends Component {
         if (this.state.redirectToReferrer) {
             return (<Redirect to={'/partner'} />)
         }
+        // const userData = localStorage.getItem('userData');
+        // if (userData) {
+        //     return <Redirect to="/" />;
         return (
             <div>
                 {/* <!-- Button trigger modal --> */}

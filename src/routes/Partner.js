@@ -7,11 +7,13 @@ import Modal from '../component/Modal';
 
 
 class Partner extends Component {
+
+
     state = {
         getWorkers: [],
         loaded: false,
-
     }
+
 
 
     _isMounted = false;
@@ -19,12 +21,12 @@ class Partner extends Component {
     //Fetch the worker from database
 
     componentDidMount() {
-
-        fetch('http://localhost:5000/api/workers/')
-            .then(res => res.json())
-            .then(result => {
+        const token = JSON.parse(localStorage.getItem('usertoken'));
+        console.log(token)
+        axios.get('http://localhost:5000/api/workers/', { headers: { "Authorization": `Bearer ${token}` } })
+            .then(res => {
                 this.setState({
-                    getWorkers: result,
+                    getWorkers: res.data,
                     loaded: true
                 })
 
@@ -57,20 +59,20 @@ class Partner extends Component {
 
     render() {
 
-    // Destruction
+        // Destruction
         let { getWorkers, loaded } = this.state
 
-     // Display loading data is problem accessing the api
+        // Display loading data is problem accessing the api
         if (!loaded) {
             return <div>loading data ....</div>
         }
 
-       
+
 
 
         return (
             <div>
-               <Modal />
+                <Modal />
                 <table className="table table-hover mt-5">
                     <thead>
                         <tr>

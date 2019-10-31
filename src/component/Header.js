@@ -41,9 +41,7 @@ export default class Header extends Component {
                 <div className="collapse navbar-collapse " id="navbarTogglerDemo02">
 
                     <ul className="navbar-nav mr-auto mt-2 mt-lg-0 float-left ">
-                        {/* <li className="nav-item active">
-                        <Link className="nav-link" to="/product">Product <span className="sr-only">(current)</span></Link>
-                    </li> */}
+
                         <li className="nav-item">
                             <Link className="nav-link" to="/partner">Partner </Link>
                         </li>
@@ -56,11 +54,10 @@ export default class Header extends Component {
                         <li className="nav-item">
                             <Link className="nav-link" to="/profile"> Profile</Link>
                         </li>
-                         
-                         {/* <h3>Welcome,  {this.getToken}</h3> */}
-                        <button className="btn btn-info btn-sm float-right" type="button" onClick={this.logout}>Logout</button>
 
                     </ul>
+                    <button className="btn btn-info btn-sm float-right mr-5" type="button" onClick={this.logout}>Logout</button>
+
                 </div>
 
 
