@@ -33,7 +33,7 @@ export default class Header extends Component {
         return (
 
             <nav className="  navbar navbar-expand-lg navbar-dark bg-dark ">
-                <Link className="navbar-brand text-danger" to="/">WE CARE </Link>
+                <Link className="navbar-brand text-danger" to="/partner">WE CARE </Link>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon "></span>
                 </button>
